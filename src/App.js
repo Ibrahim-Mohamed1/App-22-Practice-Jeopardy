@@ -24,7 +24,6 @@ class App extends Component {
     }))
   }
   render() {
-    console.log(this.state.toggle)
     return (
       <div>
         <h1 style={{display:"block", margin: 20,color: "#0e81ff", }}>Practice Jeopardy</h1>

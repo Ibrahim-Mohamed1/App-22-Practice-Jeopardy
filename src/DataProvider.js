@@ -13,16 +13,16 @@ class DataProvider extends Component {
 
     getQuestions = () => {
         axios.get(`https://vschool-cors.herokuapp.com?url=http://jservice.io/api/random`).then(res => {
-          console.log(res.data)
             this.setState({
                 question: res.data[0],
-                category: res.data[0].category  
+                category: res.data[0].category
             })
-        })
+        }).catch(function (error) {
+            window.location.reload()
+        });
     }
 
     render() {
-        console.log(this.state, "FUCKKKK")
         return (
             <Provider value={{
                 getQuestions: this.getQuestions,
